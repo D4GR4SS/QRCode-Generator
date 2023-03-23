@@ -7,9 +7,111 @@
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- ? Remixicons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/2.5.0/remixicon.css"
+      integrity="sha512-CWRnZlthFAu05mm4Pu5R/ikDV/2jPo6cgmkpdtBFWUY9/mqNFuTmgwnpBWqDiIeMdn5wv1NEQFdt82/Ak+uzkg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- ? QRCodeJS CDN -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>QR Code Generator</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <div class="icon-bar">
+      <a href="https://github.com/D4GR4SS" target="_blank" class="github"
+        ><i class="ri-github-line"></i
+      ></a>
+      <a href="mailto:dagrassitelli@gmail.com" class="google"
+        ><i class="ri-google-line"></i
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/davide-grassitelli-web-dev/"
+        target="_blank"
+        class="linkedin"
+        ><i class="ri-linkedin-line"></i
+      ></a>
+    </div>
+
+    <main class="content">
+      <h1>Free QR Code Generator</h1>
+      <div class="container">
+        <div class="container-item">
+          <p>
+            Create a free QR code to use in your branding, marketing and more to
+            easily drive customers to your website.
+          </p>
+          <p>
+            Please provide a URL below to generate a QR code and download the
+            image format of your choice!
+          </p>
+          <form id="generate-form" class="form">
+            <div class="form-control">
+              <input id="url" type="text" placeholder="https://" />
+              <small id="error-message">Error message</small>
+            </div>
+            <div class="form-control">
+              <select id="size">
+                <option value="100">100x100</option>
+                <option value="200">200x200</option>
+                <option value="300" selected>300x300</option>
+                <option value="400">400x400</option>
+                <option value="500">500x500</option>
+                <option value="600">600x600</option>
+                <option value="700">700x700</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn">
+              Generate <i class="ri-qr-code-line"></i>
+            </button>
+            <button type="reset" class="btn reset-btn">
+              Reset <i class="ri-refresh-line"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="container-item">
+          <img src="img/phonePic.png" alt="smartphone" />
+        </div>
+      </div>
+
+      <!-- ? GENERATED QR CODE -->
+      <div id="generated">
+        <div id="spinner" role="status">
+          <svg
+            width="124"
+            height="124"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <style>
+              .spinner_6kVp {
+                transform-origin: center;
+                animation: spinner_irSm 0.75s infinite linear;
+              }
+              @keyframes spinner_irSm {
+                100% {
+                  transform: rotate(360deg);
+                }
+              }
+            </style>
+            <path
+              d="M10.72,19.9a8,8,0,0,1-6.5-9.79A7.77,7.77,0,0,1,10.4,4.16a8,8,0,0,1,9.49,6.52A1.54,1.54,0,0,0,21.38,12h.13a1.37,1.37,0,0,0,1.38-1.54,11,11,0,1,0-12.7,12.39A1.54,1.54,0,0,0,12,21.34h0A1.47,1.47,0,0,0,10.72,19.9Z"
+              class="spinner_6kVp"
+            />
+          </svg>
+        </div>
+        <!-- ?  Output -->
+        <div id="qrcode"></div>
+      </div>
+    </main>
   </body>
 </html>
