@@ -2,8 +2,6 @@
 
 Simple app in vanillaJS to generate and download a QR code.
 
-
-
- - [Icons](https://remixicon.com/)
- - [QRCode generator](https://davidshimjs.github.io/qrcodejs/)
- 
+- [Remix Icon](https://remixicon.com/)
+- [QRCode.js](https://davidshimjs.github.io/qrcodejs/)
+- [Illustration by Nermin](glazestock.com)
