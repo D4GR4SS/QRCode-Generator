@@ -21,11 +21,8 @@ const onGenerateSubmit = (e) => {
 
       generateQRCode(url, size);
 
-      // Generate the save button after the qr code image src is ready
       setTimeout(() => {
-        // Get save url
         const saveUrl = qr.querySelector('img').src;
-        // Create save button
         createSaveBtn(saveUrl, size);
       }, 50);
     }, 700);
@@ -60,11 +57,14 @@ const createSaveBtn = (saveUrl, size) => {
   link.href = saveUrl;
   link.style.width = `${size}px`;
   link.download = 'qrcode';
-  link.innerHTML = `Save Image <i class="ri-download-line"></i>`;
+  link.innerHTML = `Save Image <i class="ri-download-line icon"></i>`;
   document.getElementById('generated').appendChild(link);
 };
 
 hideSpinner();
+
+const date = document.getElementById('date');
+date.innerHTML = new Date().getFullYear();
 
 form.addEventListener('submit', onGenerateSubmit);
 form.addEventListener('reset', clearUI);
